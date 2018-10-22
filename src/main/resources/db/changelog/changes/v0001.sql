@@ -8,33 +8,18 @@ create table product (
 
 create table purchase_order (
   id serial not null,
-  varchar(50) not null,
-  description varchar(512) not null,
+  purchase_id integer not null,
+  customer_id integer not null references user_account.id,
+  product_id integer not null references product.id,
+  quaintity integer not null,
+  price numeric (19,2) not null references product.id,
   primary key (id)
 );
 
 create table user_account (
   id serial not null,
-  exam_id bigint not null references exam (id),
-  question_order bigint not null,
-  description text not null,
-  primary key (id)
-);
-
-create table alternative (
-  id serial not null,
-  question_id bigint not null references question (id),
-  alternative_order bigint not null,
-  description text not null,
-  correct boolean not null,
-  primary key (id)
-);
-
-create table attempt (
-  id serial not null,
-  user_id varchar(255) not null references "user" (id),
-  alternative_id bigint not null references alternative (id),
-  correct boolean not null,
-  date timestamp without time zone not null,
+  username varchar(255) not null,
+  password varchar (255) not null,
+  wallet_blance numeric (19,2) not null default 0.00,
   primary key (id)
 );
