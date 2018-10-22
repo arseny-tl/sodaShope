@@ -1,0 +1,1 @@
+docker run --name sodashop-psql -p 5432:5432 -e POSTGRES_DB=sodashop -e POSTGRES_PASSWORD=12345 -d postgres
