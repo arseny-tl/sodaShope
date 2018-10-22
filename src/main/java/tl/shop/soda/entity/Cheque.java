@@ -32,9 +32,9 @@ public class Cheque {
   private long customerId;
 
   @Column(name = "positions")
-  @ElementCollection
-  @OneToMany(mappedBy = "cheque", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-  private List<Integer> positions;
+ // @ElementCollection
+ // @OneToMany(mappedBy = "cheque", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  private int[] positions;//List<Integer> positions;
 
   @NotNull
   @Column(name = "sell_timestamp")
