@@ -1,4 +1,4 @@
-package tl.shop.soda.entity;
+package tl.shop.soda.data.entity;
 
 import lombok.Data;
 

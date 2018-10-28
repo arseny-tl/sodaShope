@@ -1,4 +1,4 @@
-package tl.shop.soda.entity;
+package tl.shop.soda.data.entity;
 
 import lombok.Data;
 
@@ -9,23 +9,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import java.util.List;
+import java.math.BigDecimal;
 
 @Data
 @Entity
-@Table(name = "user_account")
-public class UserAccount {
+@Table(name = "product")
+public class Product {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
-  private long id;
+  private Long id;
 
   @NotNull
-  @Column(name = "username")
-  private String username;
+  @Column(name = "product_name")
+  private String productName;
 
   @NotNull
-  @Column(name = "password")
-  private String password;
+  @Column(name = "product_price")
+  private BigDecimal productPrice;
 
+  @NotNull
+  @Column(name = "product_balance")
+  private Long productBalance;
 }

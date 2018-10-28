@@ -1,4 +1,4 @@
-package tl.shop.soda.entity;
+package tl.shop.soda.data.entity;
 
 import lombok.Data;
 
@@ -13,22 +13,22 @@ import java.math.BigDecimal;
 
 @Data
 @Entity
-@Table(name = "product")
-public class Product {
+@Table(name = "purchases")
+public class Purchases {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
-  private Long id;
+  private long id;
 
   @NotNull
-  @Column(name = "product_name")
-  private String productName;
+  @Column(name = "product_id")
+  private long productId;
 
   @NotNull
-  @Column(name = "product_price")
-  private BigDecimal productPrice;
+  @Column(name = "quaintity")
+  private int quaintity;
 
   @NotNull
-  @Column(name = "product_balance")
-  private Long productBalance;
+  @Column(name = "price")
+  private BigDecimal price;
 }
