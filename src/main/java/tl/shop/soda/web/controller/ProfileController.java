@@ -9,13 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 import tl.shop.soda.data.entity.UserAccount;
-import tl.shop.soda.data.service.EmailExistsException;
+import tl.shop.soda.service.exception.useraccount.EmailExistsException;
 import tl.shop.soda.data.service.RegistrationService;
-import tl.shop.soda.data.service.UsernameExistsException;
+import tl.shop.soda.service.exception.useraccount.UsernameExistsException;
 import tl.shop.soda.web.model.UserModel;
 
 import javax.validation.Valid;

@@ -22,7 +22,7 @@ create table purchases (
 );
 
 create table customer (
-  id serial not null references user_account (id),
+  id serial not null,
   full_name varchar (255) not null,
   wallet_balance numeric (19,2) not null default 0.00,
   primary key (id)
@@ -30,8 +30,9 @@ create table customer (
 
 create table cheque(
   id serial not null,
+  cheque_number integer not null,
   customer_id integer not null references customer (id),
-  positions integer[5],
+  purchase_id integer not null references purchases (id),
   sell_timestamp timestamp not null,
   primary key (id)
 );
